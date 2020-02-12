@@ -5,9 +5,9 @@ int m = 0;
 int i = 0;
 
 void setup() {
-  size(800, 600);
+  fullScreen();
   background(0);
-  values = loadJSONArray("../data/new.json");
+  values = loadJSONArray("../data/15-36-5.json");
   m = values.size();
 }
 
@@ -20,7 +20,7 @@ void draw() {
       i++;
       if (i<m) {
         p1 = values.getJSONObject(i);
-        strokeWeight(p1.getFloat("pressure")*50);
+        strokeWeight(p1.getFloat("pressure")*10);
 
         line(p0.getFloat("x"), p0.getFloat("y"), p1.getFloat("x"), p1.getFloat("y"));
       }

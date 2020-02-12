@@ -22,7 +22,7 @@ int cTime = 0;
 Tablet tablet;
 
 void setup() {
-  size(640, 360);
+  fullScreen();
   noStroke();
   tablet = new Tablet(this); 
   background(0);
@@ -33,7 +33,7 @@ void draw() {
   btn.buttonDisplay();
   stroke(255);
   if (mousePressed == true) {
-    strokeWeight(tablet.getPressure()*50);
+    strokeWeight(tablet.getPressure()*10);
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
@@ -108,7 +108,14 @@ void mouseClicked() {
       jp.setBoolean("start", p.start);
       values.append(jp);
     }
+    
+  
+  int[] numbers = new int[3]; 
+numbers[0] = hour(); 
+numbers[1] = minute(); 
+numbers[2] = second(); 
+String joinedNumbers = join(nf(numbers, 0), "-"); 
 
-    saveJSONArray(values, "data/new.json");
+    saveJSONArray(values, "data/" + joinedNumbers +".json");
   }
 }
