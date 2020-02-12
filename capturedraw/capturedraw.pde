@@ -48,7 +48,7 @@ void mouseReleased() {
 } 
 
 void mouseDragged() {
-  p = new APoint(mouseX, mouseY,tablet.getPressure(), millis() - cTime, status);
+  p = new APoint(mouseX, mouseY, tablet.getPressure(), millis() - cTime, status);
   points.add(p);
   status = false;
 }
@@ -108,14 +108,15 @@ void mouseClicked() {
       jp.setBoolean("start", p.start);
       values.append(jp);
     }
-    
-  
-  int[] numbers = new int[3]; 
-numbers[0] = hour(); 
-numbers[1] = minute(); 
-numbers[2] = second(); 
-String joinedNumbers = join(nf(numbers, 0), "-"); 
 
-    saveJSONArray(values, "data/" + joinedNumbers +".json");
+
+    int[] numbers = new int[3]; 
+    numbers[0] = day();
+    numbers[1] = hour(); 
+    numbers[2] = minute(); 
+    numbers[3] = second(); 
+    String joinedNumbers = join(nf(numbers, 0), "-"); 
+
+    saveJSONArray(values, "../data/" + joinedNumbers +".json");
   }
 }
