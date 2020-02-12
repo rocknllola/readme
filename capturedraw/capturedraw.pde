@@ -110,13 +110,13 @@ void mouseClicked() {
     }
 
 
-    int[] numbers = new int[3]; 
+    int[] numbers = new int[4]; 
     numbers[0] = day();
     numbers[1] = hour(); 
     numbers[2] = minute(); 
     numbers[3] = second(); 
     String joinedNumbers = join(nf(numbers, 0), "-"); 
 
-    saveJSONArray(values, "../data/" + joinedNumbers +".json");
+    saveJSONArray(values, "data/" + joinedNumbers +".json");
   }
 }

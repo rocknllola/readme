@@ -7,7 +7,7 @@ int i = 0;
 void setup() {
   fullScreen();
   background(0);
-  values = loadJSONArray("../capturedraw/data/15-36-5.json");
+  values = loadJSONArray("../capturedraw/data/12-18-36-16.json");
   m = values.size();
 }
 
